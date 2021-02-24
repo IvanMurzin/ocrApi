@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def ocr():
     if request.data == b'':
-        return "It's kinda work now", 200
+        return "Hello!", 200
     return pytesseract.image_to_string(Image.open(BytesIO(base64.b64decode(request.data))), lang='rus'), 200
 
 
